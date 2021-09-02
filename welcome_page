@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>inner world</title>
+
+</head>
+
+<body style = "background-color:indigo;">
+
+<img></img>     
+<h1 style="padding-top: 150px; padding-right: 350px; padding-bottom: 150px; padding-left: 150px; color:snow; font-size: 150px; font-family: 'Courier New', Courier, monospace">WELCOME TO... <br> A PANIC ROOM! </h1>
+<h2 style="padding-top: 0px; padding-right: 150px; padding-bottom: 250px; padding-left: 150px; color:snow; font-size: 32px; font-family: 'Courier New', Courier, monospace">where all your darkest fears are gonna close to you</h2>
+
+<p></p>
+
+<dl>
+    <dt style="padding-top: 150px; padding-right: 350px; padding-bottom: 150px; padding-left: 150px; color:snow; font-size: 60px; font-family: 'Courier New', Courier, monospace">Join New York</dt>
+     <dd>Songs by Sting 24/7</dd>
+    <dt>Or... Choose Paris!</dt>
+     <dd>In fact, it's the same New York</dd>
+    
+</dl>
+
+
+</body>
+
+</html>
