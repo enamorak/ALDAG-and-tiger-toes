@@ -15,6 +15,13 @@
         body {
             background-color: #ffffff;
         }
+
+        @media screen and (min-width: 320px) and (max-width: 600px) {
+            body {
+                background-color: #3a3a3a;
+            }
+        }
+
         h1 {
             font-size: 20px;
 	        color: rgb(0, 0, 0);
@@ -22,7 +29,7 @@
         }
         p {
             background-color: #000000);
-            color: rgb(0, 0, 0);
+            color: rgb(0,0,0);
         }
         .frame {
             border: 7px outset rgb(215,155,55);
@@ -53,6 +60,7 @@
         border: 2px solid;
         border-image-slice: 1;
         background: var(--gradient) !important;
+        background-clip: text;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         border-image-source:  var(--gradient) !important; 
@@ -62,12 +70,14 @@
 
         .btn:hover, .btn:focus {
             background: var(--gradient) !important;
+            background-clip: border-box;
         -webkit-background-clip: none !important;
         -webkit-text-fill-color: #fff !important;
         border: 0px solid rgb(0, 0, 0) !important; 
         box-shadow: rgb(255, 216, 109) 10px 0 10px;
         text-decoration: underline;
         }
+
 
     </style>
 
