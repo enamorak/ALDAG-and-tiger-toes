@@ -106,10 +106,10 @@ CREATE TABLE IF NOT EXISTS `animals` (
 	`height`	INTEGER,
 	`birthday`	TEXT
 );
-INSERT INTO `animals` VALUES (11,'Roxy','f',20,71,'16.02.2016');
-INSERT INTO `animals` VALUES (12,'Leo','m',20,76,'17.03.2018');
-INSERT INTO `animals` VALUES (13,'In','m',20,72,'18.05.2017');
-INSERT INTO `animals` VALUES (14,'Garry','m',5,32,'05.05.2020');
-INSERT INTO `animals` VALUES (15,'Mia','f',5,30,'05.05.2020');
-INSERT INTO `animals` VALUES (16,'Teo','m',5,28,'05.05.2020');
+INSERT INTO `animals` VALUES (11,'Roxy','f',20,71,'2016-02-16');
+INSERT INTO `animals` VALUES (12,'Leo','m',20,76,'2018-03-17');
+INSERT INTO `animals` VALUES (13,'In','m',20,72,'2017-05-18');
+INSERT INTO `animals` VALUES (14,'Garry','m',5,32,'2020-05-05');
+INSERT INTO `animals` VALUES (15,'Mia','f',5,30,'2020-05-05');
+INSERT INTO `animals` VALUES (16,'Teo','m',5,28,'2020-05-05');
 COMMIT;
