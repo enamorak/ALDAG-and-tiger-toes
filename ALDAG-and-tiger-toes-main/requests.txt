@@ -1,0 +1,9 @@
+UPDATE animals SET birthday = SUBSTR(birthday,7,4) || '-' || SUBSTR(birthday,4,2) || '-' || SUBSTR(birthday,1,2);
+
+SELECT * FROM animals order by birthday desc limit 1;
+
+SELECT DISTINCT(SUBSTR(birthday, 1, 4)) FROM animals;
+
+SELECT item_id, MAX(item_id) AS 'total_items' FROM catalog order by item_id DESC;
+
+SELECT AVG(height) AS 'average_height' FROM animals WHERE birthday>=date('now', '-4 years')
