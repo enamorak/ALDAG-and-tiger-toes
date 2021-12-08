@@ -1,0 +1,34 @@
+--- вывести только уникальные значения дней рождений животных ---
+SELECT DISTINCT birthday FROM animals;
+
+--- разделить животных на группы по весу и для каждой группы найти минимальный и максимальный вес ---
+SELECT MIN(height), MAX(height) FROM animals GROUP BY weight;
+
+--- найти все заказы определенного клиента по имени ---
+SELECT * FROM orders
+where client_id = (SELECT client_id FROM clients WHERE client_name = 'Well Well');
+
+--- вывести имена покупателей, которые имеют заказы с суммой выше средней, и менеджеров, работающих с ними ---
+--- (пусть за каждый такой заказ выдается подарок) ---
+SELECT client_name, manager
+FROM clients
+where client_id IN (SELECT client_id
+              FROM orders
+              WHERE price > (SELECT AVG(price)
+                          from orders));
+
+--- вывести имена всех клиентов, совершивших заказы на максимальную сумму ---					  
+SELECT client_name
+FROM clients
+WHERE client_id IN (SELECT client_id
+               FROM orders
+               WHERE price = (SELECT MAX(price)
+                            FROM orders));
+							
+--- вывести клиентов, которые заказали что-то в один день, но не заказали ничего в другой день ---							
+--- например, акция длится два дня, а подарки, за участие в ней выдаются только за заказы в один из выбранный клиентов дней ---							
+select client_id from orders where order_date='2021-09-01' and client_id not in
+(select client_id from orders where order_date = '2021-09-02') group by client_id; 
+
+--- определить количество клиентов, совершивших только 1 заказ ---
+select count(*)  from (select client_id from orders group by client_id having count(order_id)=1 ) as Q
