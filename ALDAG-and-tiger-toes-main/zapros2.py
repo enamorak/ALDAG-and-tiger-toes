@@ -87,9 +87,9 @@ def One_Order(cursor2):
         )
         print(cursor2.fetchall())                        
 
-if create_connection("base2.db"):
+if create_connection("ALDAG-and-tiger-toes-main/base2.db"):
 
-    connection = sqlite3.connect("base2.db")
+    connection = sqlite3.connect("ALDAG-and-tiger-toes-main/base2.db")
     cursor = connection.cursor()
     
     Distinct_birthdays(cursor)
