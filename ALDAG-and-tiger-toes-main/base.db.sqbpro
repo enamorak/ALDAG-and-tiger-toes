@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/algul/OneDrive/Документы/TigerToes/base.db" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1578"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="payments"/><default_encoding codec=""/><browsetable_info data="AAAAAgAAABAAcABhAHkAbQBlAG4AdABzAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAA/////wAAAA4AYQBuAGkAbQBhAGwAcwAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="base.db.sql">UPDATE animals SET birthday = SUBSTR(birthday,7,4) || '-' || SUBSTR(birthday,4,2) || '-' || SUBSTR(birthday,1,2);
-
-SELECT * FROM animals order by birthday desc limit 1;
-
-SELECT DISTINCT(SUBSTR(birthday, 1, 4)) FROM animals;
-
-SELECT item_id, MAX(item_id) AS 'total_items' FROM catalog order by item_id DESC;
-
-SELECT AVG(payment_sum) FROM payments WHERE organization_id = 5</sql><current_tab id="0"/></tab_sql></sqlb_project>
