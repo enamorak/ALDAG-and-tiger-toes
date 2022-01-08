@@ -104,7 +104,7 @@ class TestDB(unittest.TestCase):
         self.assertEqual(len(r), 1)
 
     def Ordered_And_Not(self):
-        r = self.tempdb.Ordered_And_Not("2021-09-01")
+        r = self.tempdb.Ordered_And_Not("2021-09-01", "2021-09-02")
         self.assertEqual(len(r), 1)         
 
 if __name__ == '__main__':

@@ -48,9 +48,9 @@ class db():
             return self.cursor2.execute(r).fetchall()
 
     # вывести id клиентов, которые заказали что-то в один день, но не заказали ничего в другой день
-    def Ordered_And_Not(self, order_datik: str):
-            r = "select client_id from orders where order_date = :order_datik and client_id not in (select client_id from orders where order_date = :order_datik) group by client_id;"
-            return self.cursor2.execute(r, {'order_datik': order_datik}).fetchall()
+    def Ordered_And_Not(self, order_datik: str, order_datik2: str):
+            r = "select client_id from orders where order_date = :order_datik and client_id not in (select client_id from orders where order_date = :order_datik2) group by client_id;"
+            return self.cursor2.execute(r, {'order_datik': order_datik, 'order_datik2': order_datik2} ).fetchall()
 
     # определить количество клиентов, совершивших только n заказов
     def N_Orders(self, n: int):
@@ -66,5 +66,5 @@ base.Find_by_name("Well Well")
 base.Find_Clinets_and_Managers()
 base.Find_Clinets_With_Max_Sum()
 base.N_Orders(3)
-base.Ordered_And_Not("2021-09-01")
+base.Ordered_And_Not("2021-09-01", "2021-09-02")
 del base
