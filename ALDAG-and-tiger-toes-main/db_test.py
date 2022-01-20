@@ -63,7 +63,7 @@ class TestDB(unittest.TestCase):
                 `animal_id`	INTEGER PRIMARY KEY AUTOINCREMENT,
                 `category_id`	INTEGER,
                 `zoo_id`	INTEGER,
-                `nick`	INTEGER,
+                `nick`	TEXT,
                 `gender`	TEXT,
                 `height`	INTEGER,
                 `weight`	INTEGER,
