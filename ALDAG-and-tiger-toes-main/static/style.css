@@ -1,0 +1,142 @@
+body {
+    background-color: #ffffff;
+}
+h1 {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ul {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p {
+    background-color: #000000;
+}
+li {
+    list-style-type: none; 
+}
+.layer000 {
+    position: absolute; 
+    bottom: 5%; 
+    left: 5%;
+    z-index: 0;
+}
+.layer00 {
+    position: absolute; 
+    bottom: 5%; 
+    left: 5%;
+    z-index: 2;
+}
+.layer0 {
+    position: absolute; 
+    bottom: 90%; 
+    left: 5%;
+    z-index: 9998;
+}
+.layer4 {
+    position: absolute; 
+    bottom: 65%; 
+    left: 23%;
+    z-index: 2;
+}
+.layer5 {
+    position: absolute; 
+    bottom: 10%; 
+    left: -10%;
+    z-index: 2;
+}
+.layer8 {
+    position: absolute; 
+    bottom: 0%; 
+    left: 0%;
+    z-index: 2;
+}
+.layer6 {
+    position: absolute; 
+    bottom: 50%; 
+    left: 40%;
+    z-index: 2;
+}
+.layer7 {
+    position: absolute; 
+    bottom: 15%; 
+    left: 30%;
+    z-index: 2;
+}
+.bar ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.menu > li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 5%;
+    bottom: 90%;
+}
+.menu li a {
+    display: block;
+    margin: 0;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+.dropdown_menu {
+    display: block;
+    position: absolute;
+    left: 5%;
+    top: 100%;
+}
+.dropdown_menu > ul {
+    border: 1px solid;
+    margin-top: 10px;  
+    padding: 10px 1px;
+    min-width: 140px;
+    opacity: 0;
+    transition: opacity .5s; 
+}
+.dropdown_menu li a {
+    white-space: nowrap; 
+    z-index: 9999;
+    padding: 10px 20px;
+}
+.parent_dropdown:hover .dropdown_menu {
+    left: 0px;
+}
+.parent_dropdown:hover .dropdown_menu ul {
+    opacity: 1;
+}
+.bar:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.menu_bordo {
+    background: rgb(215,155,55);
+}
+.menu_bordo .menu > li > a {
+    box-shadow: inset 0 25px 25px #ffce8ecc;
+    color: rgb(215,155,55);
+}
+.menu_bordo .menu > li > a:hover {
+    color: rgb(51, 49, 44);
+}
+.menu_bordo .menu .active a{
+    box-shadow: inset 0 25px 25px #ffce8ecc;
+    color: rgb(215, 155, 55);
+    cursor: default;
+}
+.menu_bordo .dropdown_menu > ul {
+    background: rgb(21, 22, 22);
+    border-color: rgb(29, 36, 34);
+}
+.menu_bordo .dropdown_menu > ul > li > a {
+    color: rgb(215, 155, 55);
+}
+.menu_bordo .dropdown_menu > ul > li > a:hover {
+    background: rgb(51, 49, 44);
+    color: rgb(215, 155, 55);
+}
