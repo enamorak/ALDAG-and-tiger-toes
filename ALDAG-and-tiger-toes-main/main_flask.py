@@ -12,7 +12,7 @@ def welcome_page():
 
 @app.route('/about_us', methods=['GET', 'POST'])
 def about_page():
-    feedback = Feedback.query.all()
+    """ feedback = Feedback.query.all()
     if request.method == 'POST':
         client_name = request.form.get('client_name')
         text = request.form.get('text')
@@ -21,8 +21,9 @@ def about_page():
             db.session.add(feed)
             db.session.commit()
             feedback.append(feed)
-    print(feedback)
-    return render_template("about_us.html", feedback = feedback)
+    print(feedback) 
+    return render_template("about_us.html", feedback = feedback) """
+    return render_template("about_us.html")
 
 @app.route('/catalog')
 def catalog_page():
@@ -41,8 +42,12 @@ def teo_page():
     return render_template("teo.html")
 
 @app.route('/jenny')
-def white_jasmine_page():
+def jenny():
     return render_template("jenny.html")
+
+@app.route('/base')
+def base():
+    return render_template("base.html")    
 
 if __name__ == '__main__':
     app.run(debug=True)
