@@ -93,7 +93,20 @@ class Animals(db.Model):
                 self.animal_id, self.category_id, self.zoo_id, self.nick, self.gender, self.height, self.weight, self.birthday
             )               
 
+class Feedback(db.Model):
+    __tablename__ = 'feedback'
+    feedback_id = db.Column(db.Integer, primary_key=True)
+    client_id = db.Column(db.String(80), nullable=True)
+    feedback = db.Column(db.String(1000), nullable=True)
+
+    def __repr__(self):
+        return "<Feedback(%r, %r, %r)>" % (
+                self.feedback_id, self.client_id, self.feedback
+            )
+
 db.create_all()
+
+"""
 
 print('*' * 100)
 print()
@@ -220,4 +233,6 @@ print()
 r = db.session.execute('select count(*)  from (select client_id from orders group by client_id having count(order_id)= 1 ) as Q')
 print("ТЕСТ 7/7")
 for a in r:
-    print(a[0])
+    print(a[0]) 
+
+"""    

@@ -1,4 +1,5 @@
 from flask import *
+from getting_app import app
 app = Flask(__name__)
 
 @app.route('/img/<path:path>')
@@ -9,9 +10,19 @@ def send_img(path):
 def welcome_page():
     return render_template("welcome_page.html")
 
-@app.route('/about_us')
+@app.route('/about_us', methods=['GET', 'POST'])
 def about_page():
-    return render_template("about_us.html")
+    feedback = Feedback.query.all()
+    if request.method == 'POST':
+        client_name = request.form.get('client_name')
+        text = request.form.get('text')
+        if client_name != '' and text != '':
+            feed = Feedback(client_name = client_name, text = text)
+            db.session.add(feed)
+            db.session.commit()
+            feedback.append(feed)
+    print(feedback)
+    return render_template("about_us.html", feedback = feedback)
 
 @app.route('/catalog')
 def catalog_page():
