@@ -14,6 +14,9 @@
         body {
             background-color: #000000;
         }
+        li {
+            list-style-type: none; 
+        }
         h1 {
             font-size: 20px;
 	        color: rgb(255, 255, 255);
@@ -52,15 +55,125 @@
             bottom: 70%;
             left: 55%;
         }
+        .headerr {
+            position: absolute;
+            bottom: 90%;
+            left: 5%;
+        }
+        .layer0 {
+            position: absolute; 
+            bottom: 90%; 
+            left: 5%;
+        }
+        .layer000 {
+            position: absolute; 
+            bottom: 0%; 
+            left: 10%;
+        }
+        .bar ul {
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        .menu > li {
+            float: left;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            left: 5%;
+            bottom: 90%;
+        }
+        .menu li a {
+            display: block;
+            margin: 0;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        .dropdown_menu {
+            display: block;
+            position: absolute;
+            left: 5%;
+            top: 100%;
+        }
+        .dropdown_menu > ul {
+            border: 1px solid;
+            margin-top: 10px;  
+            padding: 10px 1px;
+            min-width: 140px;
+            opacity: 0;
+            transition: opacity .5s; 
+        }
+        .dropdown_menu li a {
+            white-space: nowrap; 
+            z-index: 9999;
+            padding: 10px 20px;
+        }
+        .parent_dropdown:hover .dropdown_menu {
+            left: 0px;
+        }
+        .parent_dropdown:hover .dropdown_menu ul {
+            opacity: 1;
+        }
+        .bar:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .menu_bordo {
+            background: rgb(215,155,55);
+        }
+        .menu_bordo .menu > li > a {
+            box-shadow: inset 0 25px 25px rgba(63, 58, 58, 0.6);
+            color: rgb(215,155,55);
+        }
+        .menu_bordo .menu > li > a:hover {
+            color: rgb(2, 255, 200);
+        }
+        .menu_bordo .menu .active a{
+            box-shadow: inset 0 25px 25px rgba(63, 58, 58, 0.6);
+            color: rgb(215, 155, 55);
+            cursor: default;
+        }
+        .menu_bordo .dropdown_menu > ul {
+            background: rgb(21, 22, 22);
+            border-color: rgb(29, 36, 34);
+        }
+        .menu_bordo .dropdown_menu > ul > li > a {
+            color: rgb(215, 155, 55);
+        }
+        .menu_bordo .dropdown_menu > ul > li > a:hover {
+            background: rgb(51, 49, 44);
+            color: rgb(2, 255, 200);
+        }
     </style>
 
 </head>
 
 <body>
-    {% include "base.html" %}
+    
+
+
     <img src="/img/header.png" width="60%" alt="Tiger Toes" vspace="5%" hspace="5%">
 
-    
+    <dev class = "layer0">
+        <nav class="menu_bordo">
+            <ul class="menu">
+                <li><a href="/">welcome page</a></li>
+                <li class="parent_dropdown"><a href="/catalog">catalog</a>
+                    <div class="dropdown_menu">
+                        <ul>
+                            <li><a href="/in">in</a></li>
+                            <li><a href="/yan">yan</a></li>
+                        </ul>
+                    <div>
+                </li>
+                <li><a href="/about_us">about us</a></li>
+                <li class="active"><a href="404">new! (will be added soon)</a></li>
+                <li><a href="404">new too! will be added soon</a></li>
+            </ul>
+        </nav>
+        </dev>
+
     <dev class = "layer1">
 
         <h1>
@@ -87,7 +200,7 @@
 
         <!-- <img src="read_more_label.png" width="60%" alt="Tiger Toes" vspace="10%" hspace="10%"> -->
 
-        <a href="/catalog.html"><img src="/img/read_more_label.png" width="60%" alt="Read more" vspace="10%" hspace="10%"></a>
+        <a href="/catalog"><img src="/img/read_more_label.png" width="60%" alt="Read more" vspace="10%" hspace="10%"></a>
 
     </dev>
 

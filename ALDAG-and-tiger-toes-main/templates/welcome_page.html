@@ -25,10 +25,15 @@
         li {
             list-style-type: none; 
         }
+        .layer00 {
+            position: absolute; 
+            bottom: -5%; 
+            left: -33%;
+        }
         .layer0 {
             position: absolute; 
-            bottom: 85%; 
-            left: 10%;
+            bottom: 90%; 
+            left: 5%;
         }
         .layer1 {
             position: absolute; 
@@ -98,14 +103,14 @@
             background: rgb(215,155,55);
         }
         .menu_bordo .menu > li > a {
-            box-shadow: inset 0 25px 25px rgba(63, 58, 58, 0.6);
+            box-shadow: inset 0 25px 25px rgba(63, 58, 58, 0.5);
             color: rgb(215,155,55);
         }
         .menu_bordo .menu > li > a:hover {
             color: rgb(2, 255, 200);
         }
         .menu_bordo .menu .active a{
-            box-shadow: inset 0 25px 25px rgba(63, 58, 58, 0.6);
+            box-shadow: inset 0 25px 25px rgba(63, 58, 58, 0.5);
             color: rgb(215, 155, 55);
             cursor: default;
         }
@@ -129,21 +134,25 @@
     
     <img src="/img/header.png" width="60%" alt="Tiger Toes" vspace="10%" hspace="10%">
     
+    <dev class = "layer00">
+        <img src="/img/background.png" width="80%" alt="Tiger Toes" vspace="0%" hspace="0%">
+    </dev>    
+
     <dev class = "layer0">
     <nav class="menu_bordo">
         <ul class="menu">
-            <li><a href="/welcome_page">welcome page</a></li>
+            <li><a href="/">welcome page</a></li>
             <li class="parent_dropdown"><a href="/catalog">catalog</a>
                 <div class="dropdown_menu">
                     <ul>
                         <li><a href="/in">in</a></li>
-                        <li><a href="/yan">yan (not added yet)</a></li>
+                        <li><a href="/yan">yan</a></li>
                     </ul>
                 <div>
             </li>
             <li><a href="/about_us">about us</a></li>
-            <li class="active"><a href="#/">new! (will be added soon)</a></li>
-            <li><a href="#/">new too! will be added soon</a></li>
+            <li class="active"><a href="404">new! (will be added soon)</a></li>
+            <li><a href="404">new too! will be added soon</a></li>
         </ul>
     </nav>
     </dev>

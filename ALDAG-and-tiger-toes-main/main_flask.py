@@ -6,6 +6,10 @@ app = Flask(__name__)
 def send_img(path):
     return send_from_directory('img', path)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route('/')
 def welcome_page():
     return render_template("welcome_page.html")
@@ -36,14 +40,6 @@ def in_page():
 @app.route('/yan')
 def yan_page():
     return render_template("yan.html")
-
-@app.route('/teo')
-def teo_page():
-    return render_template("teo.html")
-
-@app.route('/jenny')
-def jenny():
-    return render_template("jenny.html")
 
 @app.route('/base')
 def base():
