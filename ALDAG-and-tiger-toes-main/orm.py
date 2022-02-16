@@ -1,11 +1,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
+from datetime import datetime
+from flask_login import UserMixin, LoginManager
+from flask_security import RoleMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///orm_db.db'
 db = SQLAlchemy(app)
+login_manager = LoginManager(app)
 
 class Zoos(db.Model):
     __tablename__ = 'zoos'
@@ -43,17 +48,69 @@ class Orders(db.Model):
                 self.client_id, self.order_id, self.price, self.order_date, self.received_date
             )
 
+roles_clients = db.Table(
+    'roles_clients',
+    db.Column('client_id', db.Integer(), db.ForeignKey('clients.client_id')),
+    db.Column('role_id', db.Integer(), db.ForeignKey('roles.role_id'))
+)
+
+class Role(db.Model, RoleMixin):
+    __tablename__ = 'roles'
+    role_id = db.Column(db.Integer(), primary_key=True)
+    role_name = db.Column(db.String(80), unique=True)
+    role_description = db.Column(db.String(255))
+
+    def __str__(self):
+        return self.role_name
+
 class Clients(db.Model):
     __tablename__ = 'clients'
-    client_id = db.Column(db.Integer, primary_key=True)
-    client_name = db.Column(db.String(100), nullable=False)
+    client_id = db.Column(db.Integer, unique=True, primary_key=True)
+    client_name = db.Column(db.String)
+    username = db.Column(db.String, unique=True)
+    email = db.Column(db.String, unique=True)
+    password = db.Column(db.String)
     manager = db.Column(db.String(100), nullable=False)
-    telephone = db.Column(db.Integer, nullable=False)
+    created_on = db.Column(db.DateTime(), default=datetime.utcnow)
+    updated_on = db.Column(db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
+    active = db.Column(db.Boolean())
+    roles = db.relationship('Role', secondary=roles_clients, backref=db.backref('clients', lazy='dynamic'))
 
-    def __repr__(self):
-        return "<Clients(%r, %r, %r, %r)>" % (
-                self.client_id, self.client_name, self.manager, self.telephone
-            )
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def has_role(self, *args):
+        return set(args).issubset({role.name for role in self.roles})
+
+    def get_id(self):
+        return self.client_id
+
+    def __unicode__(self):
+        return self.username
+
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return db.session.query(Clients).get(user_id)
+
+#    def __repr__(self):
+#        return "<Clients(%r, %r, %r, %r)>" % (
+#                self.client_id, self.client_name, self.manager, self.telephone
+#            )
 
 class Categories(db.Model):
     __tablename__ = 'categories'
