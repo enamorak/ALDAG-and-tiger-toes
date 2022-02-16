@@ -54,8 +54,12 @@ p {
     top: 20%; 
     left: 20%;
 }
-
-
+.layer0000 {
+    position: absolute;
+    bottom: 63%;
+    left: 60%;
+    z-index: 9999;
+}
 :root {
     --gradient: linear-gradient(to left top, rgb(215,155,55) 10%, #ffbd2f 90%) !important;
 }

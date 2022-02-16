@@ -1,6 +1,13 @@
 from flask import *
+from flask_sqlalchemy import SQLAlchemy
+import sqlite3
 from getting_app import app
+from orm import db, Clients
+
 app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///orm_db.db'
+db = SQLAlchemy(app)
 
 @app.route('/img/<path:path>')
 def send_img(path):
@@ -11,6 +18,35 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 @app.route('/')
+def start_page():
+    return render_template("start_page.html")
+
+@app.route("/sign_in",methods=["GET", "POST"])
+def sign_in():
+    if request.method == "POST":
+        uname = request.form["uname"]
+        password = request.form["password"]
+        login = Clients.query.filter_by(uname=uname, password = password).first()
+        if login is not None:
+            return redirect(url_for("welcome_page"))
+    return render_template("sign_in.html")
+
+@app.route("/sign_up", methods=["GET", "POST"])
+def sign_up():
+    if request.method == "POST":
+        client_name = request.form['client_name']
+        uname = request.form['uname']
+        email = request.form['email']
+        password = request.form['password']
+
+        register = Clients(client_name = client_name, uname = uname, email = email, password =  password)
+        db.session.add(register)
+        db.session.commit()
+
+        return redirect(url_for("sign_in"))
+    return render_template("sign_up.html")
+
+@app.route('/welcome_page')
 def welcome_page():
     return render_template("welcome_page.html")
 

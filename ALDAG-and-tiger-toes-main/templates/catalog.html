@@ -55,21 +55,47 @@
 	        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         p {
-            background-color: #000000;
+            background-color: #ffffff;
             color: rgb(0,0,0);
         }
         .frame {
             border: 3px outset rgb(215,155,55);
         }
+        .layer000 {
+            position: absolute; 
+            bottom: 5%; 
+            left: 5%;
+            z-index: 0;
+        }
+        .layer1000 {
+            position: absolute; 
+            bottom: -135%; 
+            left: 5%;
+            z-index: 0;
+        }
+        .layer2000 {
+            position: absolute; 
+            bottom: 70%; 
+            left: 0%;
+            z-index: 2;
+        }
+        .layer3000 {
+            position: absolute; 
+            bottom: 65%; 
+            left: 75%;
+            z-index: 2;
+        }
         .layer4 {
             position: absolute; 
             bottom: 75%; 
             left: 17%;
+            z-index: 2;
         }
         .layer5 {
             position: absolute; 
             top: 20%; 
             left: 20%;
+            z-index: 2;
         }
     
 
@@ -119,6 +145,22 @@
 
     </dev>
 
+    <dev class = "layer000">
+        <img src="/img/ground.png" width="100%" alt="Tiger Toes" vspace="0%" hspace="0%">
+    </dev>
+
+    <dev class = "layer2000">
+        <a href="/welcome_page"><img src="/img/welcome_page_label.png" width="30%" alt="Tiger Toes" vspace="0%" hspace="0%"></a>
+    </dev>
+
+    <dev class = "layer3000">
+        <a href="/my_basket"><img src="/img/my_basket.png" width="110%" alt="Tiger Toes" vspace="0%" hspace="0%"></a>
+    </dev>
+
+    <dev class = "layer1000">
+        <img src="/img/ground.png" width="100%" alt="Tiger Toes" vspace="0%" hspace="0%">
+    </dev>
+    
     <!--
     <dev class = "layer5">
         <img src="img/in.png" width="40%" alt="In" vspace="0%" hspace="0%" class = "frame">
@@ -159,7 +201,7 @@
                             <h5 class="card-title"> </h5>
                                 <h6 class="card-subtitle mb-2 text-muted">YAN</h6>
                             <p class="card-text">So does he</p>
-                            <a href="#" class="btn mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="/yan" class="btn mr-2"><i class="fas fa-link"></i> READ MORE</a>
                             <a href="#" class="btn"><i class="fab fa-github"></i> BUY</a>
                         </div>
                     </div>

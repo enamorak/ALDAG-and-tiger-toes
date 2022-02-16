@@ -1,11 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
+import datetime
+from werkzeug.security import generate_password_hash,  check_password_hash
+from flask_login import LoginManager, UserMixin
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///orm_db.db'
 db = SQLAlchemy(app)
+
 
 class Zoos(db.Model):
     __tablename__ = 'zoos'
@@ -43,17 +47,18 @@ class Orders(db.Model):
                 self.client_id, self.order_id, self.price, self.order_date, self.received_date
             )
 
-class Clients(db.Model):
+
+class Clients(db.Model, UserMixin):
     __tablename__ = 'clients'
-    client_id = db.Column(db.Integer, primary_key=True)
-    client_name = db.Column(db.String(100), nullable=False)
-    manager = db.Column(db.String(100), nullable=False)
-    telephone = db.Column(db.Integer, nullable=False)
+    client_id = db.Column(db.Integer(), primary_key=True)
+    client_name = db.Column(db.String(100))
+    uname = db.Column(db.String(50), nullable=False, unique=True)
+    email = db.Column(db.String(100), nullable=False, unique=True)
+    password = db.Column(db.String(100), nullable=False)
+    manager = db.Column(db.String(100), nullable=True)
 
     def __repr__(self):
-        return "<Clients(%r, %r, %r, %r)>" % (
-                self.client_id, self.client_name, self.manager, self.telephone
-            )
+        return "<{}:{}>".format(self.client_id, self.uname)
 
 class Categories(db.Model):
     __tablename__ = 'categories'
