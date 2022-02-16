@@ -2,12 +2,14 @@ from flask import *
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from getting_app import app
-from orm import db, Clients
+from orm import db, Clients, Feedback
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///orm_db.db'
 db = SQLAlchemy(app)
+
+app.secret_key = 'TIGERTIGERTOES'
 
 @app.route('/img/<path:path>')
 def send_img(path):
@@ -25,8 +27,9 @@ def start_page():
 def sign_in():
     if request.method == "POST":
         uname = request.form["uname"]
+        session['username'] = uname
         password = request.form["password"]
-        login = Clients.query.filter_by(uname=uname, password = password).first()
+        login = Clients.query.filter_by(uname = uname, password = password).first()
         if login is not None:
             return redirect(url_for("welcome_page"))
     return render_template("sign_in.html")
@@ -46,24 +49,24 @@ def sign_up():
         return redirect(url_for("sign_in"))
     return render_template("sign_up.html")
 
+@app.route('/log_out')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('start_page'))
+
 @app.route('/welcome_page')
 def welcome_page():
     return render_template("welcome_page.html")
 
 @app.route('/about_us', methods=['GET', 'POST'])
 def about_page():
-    """ feedback = Feedback.query.all()
-    if request.method == 'POST':
-        client_name = request.form.get('client_name')
-        text = request.form.get('text')
-        if client_name != '' and text != '':
-            feed = Feedback(client_name = client_name, text = text)
-            db.session.add(feed)
-            db.session.commit()
-            feedback.append(feed)
-    print(feedback) 
-    return render_template("about_us.html", feedback = feedback) """
-    return render_template("about_us.html")
+    if request.method == "POST":
+        uname = request.form['uname']
+        feedback = request.form['feedback']
+        f = Feedback(uname = uname, feedback = feedback)
+        db.session.add(f)
+        db.session.commit()
+    return render_template("about_us.html")    
 
 @app.route('/catalog')
 def catalog_page():

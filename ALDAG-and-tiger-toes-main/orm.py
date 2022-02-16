@@ -101,12 +101,12 @@ class Animals(db.Model):
 class Feedback(db.Model):
     __tablename__ = 'feedback'
     feedback_id = db.Column(db.Integer, primary_key=True)
-    client_id = db.Column(db.String(80), nullable=True)
+    uname = db.Column(db.String(80), nullable=True)
     feedback = db.Column(db.String(1000), nullable=True)
 
     def __repr__(self):
         return "<Feedback(%r, %r, %r)>" % (
-                self.feedback_id, self.client_id, self.feedback
+                self.feedback_id, self.uname, self.feedback
             )
 
 db.create_all()

@@ -185,13 +185,11 @@
 
 
     <dev class = "layer2">
-        <form name = "form1" action = "script/request.php" method = "get">
-            Как Вас зовут? <input type = "text" name = "firstname" value = "Тут Ваше имя">
+        <form name = "form" method = "post">
+            <textarea name = "uname" rows = "2" cols = "30">Введите имя пользователя:</textarea>
             <br>
             <br>
-            
-            <br>
-            <textarea name = "message" rows = "10" cols = "15">Выделите недостатки и преимущества нашей компании:</textarea>
+            <textarea name = "feedback" rows = "10" cols = "30">Выделите недостатки и преимущества нашей компании:</textarea>
             <br>
             <input type = "submit" value = "Отправить">
         </form>
@@ -221,7 +219,7 @@
     </dev>
 
     <dev class = "layer6">
-        <a href="/"><img src="/img/log_out_label.png" width="80%" alt="Tiger Toes" vspace="0%" hspace="0%"></a>
+        <a href="/log_out"><img src="/img/log_out_label.png" width="80%" alt="Tiger Toes" vspace="0%" hspace="0%"></a>
     </dev>  
 
 </body>

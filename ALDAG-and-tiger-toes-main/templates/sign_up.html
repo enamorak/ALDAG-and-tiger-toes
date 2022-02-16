@@ -11,9 +11,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        h1 {
+            font-size: 20px;
+	        color: rgb(255, 255, 255);
+	        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        p {
+            background-color: #000000;
+        }
+        .layer1 {
+            position: absolute;
+            bottom: -15%;
+            left: -15%;
+            z-index: 0;
+        }
+    </style>
+
 </head>
 
 <body>
+
+    <dev class = "layer1">
+        <img src="/img/back.png" width="107%"  alt="Tiger Toes" vspace="0%" hspace="0%">
+    </dev>  
 
     <div class="container">
         <div class="row" style="margin-top: 40px">
@@ -35,7 +60,7 @@
                         <label for="email">Придумайте пароль:</label>
                         <input type="password" name="password" class="form-control" id="password">
                     </div>
-                    <button type="submit" class="btn form-control btn-default">Register</button>
+                    <button type="submit" class="btn form-control btn-default">Sign up</button>
                 </form>
             </div>
         </div>
