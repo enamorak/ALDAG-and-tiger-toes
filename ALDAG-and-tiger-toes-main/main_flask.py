@@ -66,7 +66,7 @@ def about_page():
         f = Feedback(uname = uname, feedback = feedback)
         db.session.add(f)
         db.session.commit()
-    return render_template("about_us.html")    
+    return render_template("about_us.html", ffeedback=Feedback.query.all())    
 
 @app.route('/catalog')
 def catalog_page():

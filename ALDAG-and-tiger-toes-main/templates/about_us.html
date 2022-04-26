@@ -22,30 +22,40 @@
 	        color: rgb(255, 255, 255);
 	        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+        h2 {
+            font-size: 10px;
+	        color: rgb(255, 255, 255);
+	        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
         p {
             background-color: #000000;
         }
         .layer1 {
+            z-index: 2;
             position: absolute; 
             bottom: 15%; 
             left: 12%;
         }
         .layer2 {
+            z-index: 2;
             position: absolute; 
             bottom: 7%; 
             left: 30%;
         }
         .layer3 {
+            z-index: 2;
             position: absolute; 
             bottom: 1%; 
             right: 1%;
         }
         .layer4 {
+            z-index: 2;
             position: absolute;
             bottom: 6%;
             left: 63%;
         }
         .layer5 {
+            z-index: 2;
             position: absolute;
             bottom: 25%;
             left: 63%;
@@ -56,17 +66,26 @@
             left: 60%;
             z-index: 9999;
         }
+        .layer99 {
+            position: absolute;
+            z-index: 0;
+            left: -160%;
+            bottom: 0%;
+        }
         .headerr {
+            z-index: 2;
             position: absolute;
             bottom: 90%;
             left: 5%;
         }
         .layer0 {
+            z-index: 2;
             position: absolute; 
             bottom: 90%; 
             left: 5%;
         }
         .layer000 {
+            z-index: 2;
             position: absolute; 
             bottom: 0%; 
             left: 10%;
@@ -186,14 +205,29 @@
 
     <dev class = "layer2">
         <form name = "form" method = "post">
-            <textarea name = "uname" rows = "2" cols = "30">Введите имя пользователя:</textarea>
+            <textarea name = "uname" rows = "2" cols = "30" placeholder="Введите имя пользователя:">  </textarea>
             <br>
             <br>
-            <textarea name = "feedback" rows = "10" cols = "30">Выделите недостатки и преимущества нашей компании:</textarea>
+            <textarea name = "feedback" rows = "10" cols = "30" placeholder="Выделите недостатки и преимущества нашей компании:">  </textarea>
             <br>
             <input type = "submit" value = "Отправить">
         </form>
-    </dev>        
+        <dev class = "layer99">
+            {% if ffeedback %}
+                <div>
+                    <h1>Отзывы:</h1>
+                    {% for feed in ffeedback %}
+                        <div class="feedback">
+                            <h2>{{feed.uname+':'}}</h2>
+                            <h2>{{feed.feedback}}</h2>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </dev>
+    </dev> 
+    
+    
 
     <dev class = "layer3">
 
