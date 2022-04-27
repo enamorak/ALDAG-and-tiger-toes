@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Tiger Toes">
+    <meta name="author" content="enamorak">    
+    <title>tiger toes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <style>
+
+        body {
+            background-color: #ffffff;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 600px) {
+            body {
+                background-color: #3a3a3a;
+            }
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 800px) {
+            body {
+                background-color: #555555;
+            }
+        }
+
+        @media screen and (min-width: 800px) and (max-width: 1000px) {
+            body {
+                background-color: #797979;
+            }
+        }
+
+        @media screen and (min-width: 1000px) and (max-width: 1200px) {
+            body {
+                background-color: #aaaaaa;
+            }
+        }
+
+        @media screen and (min-width: 1200px) and (max-width: 1400px) {
+            body {
+                background-color: #e7e4e4;
+            }
+        }
+
+        h1 {
+            font-size: 20px;
+	        color: rgb(0, 0, 0);
+	        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        p {
+            background-color: #ffffff;
+            color: rgb(0,0,0);
+        }
+        .frame {
+            border: 3px outset rgb(215,155,55);
+        }
+        .layer000 {
+            position: absolute; 
+            bottom: 5%; 
+            left: 5%;
+            z-index: 0;
+        }
+        .layer1000 {
+            position: absolute; 
+            bottom: -135%; 
+            left: 5%;
+            z-index: 0;
+        }
+        .layer2000 {
+            position: absolute; 
+            bottom: 70%; 
+            left: 0%;
+            z-index: 2;
+        }
+        .layer3000 {
+            position: absolute; 
+            bottom: 65%; 
+            left: 75%;
+            z-index: 2;
+        }
+        .layer4 {
+            position: absolute; 
+            bottom: 75%; 
+            left: 17%;
+            z-index: 2;
+        }
+        .layer5 {
+            position: absolute; 
+            top: 20%; 
+            left: 20%;
+            z-index: 2;
+        }
+    
+
+        :root {
+            --gradient: linear-gradient(to left top, rgb(215,155,55) 10%, #ffbd2f 90%) !important;
+        }
+
+        .card {
+        background: rgb(255, 255, 255);
+        border: 10px solid rgb(215,155,55);
+        color: rgba(250, 250, 250, 0.8);
+        margin-bottom: 5rem;
+        }
+
+        .btn {
+        border: 2px solid;
+        border-image-slice: 1;
+        background: var(--gradient) !important;
+        background-clip: text;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        border-image-source:  var(--gradient) !important; 
+        text-decoration: none;
+        transition: all .4s ease;
+        }
+
+        .btn:hover, .btn:focus {
+            background: var(--gradient) !important;
+            background-clip: border-box;
+        -webkit-background-clip: none !important;
+        -webkit-text-fill-color: #fff !important;
+        border: 0px solid rgb(0, 0, 0) !important; 
+        box-shadow: rgb(255, 216, 109) 10px 0 10px;
+        text-decoration: underline;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+     <dev class = "layer4">
+
+        <img src="/img/catalog_label.png" width="60%" alt="Catalog" vspace="0%" hspace="10%">
+
+    </dev>
+
+    <dev class = "layer000">
+        <img src="/img/ground.png" width="100%" alt="Tiger Toes" vspace="0%" hspace="0%">
+    </dev>
+
+    <dev class = "layer2000">
+        <a href="/welcome_page"><img src="/img/welcome_page_label.png" width="30%" alt="Tiger Toes" vspace="0%" hspace="0%"></a>
+    </dev>
+
+    <dev class = "layer3000">
+        <a href="/my_basket"><img src="/img/my_basket.png" width="110%" alt="Tiger Toes" vspace="0%" hspace="0%"></a>
+    </dev>
+
+    <dev class = "layer1000">
+        <img src="/img/ground.png" width="100%" alt="Tiger Toes" vspace="0%" hspace="0%">
+    </dev>
+    
+    <!--
+    <dev class = "layer5">
+        <img src="img/in.png" width="40%" alt="In" vspace="0%" hspace="0%" class = "frame">
+    </dev>        
+    
+    <dev class = "layer6">
+        <img src="img/yan.png" width="60%" alt="Yan" vspace="0%" hspace="0%" class = "frame">
+    </dev> 
+    
+    <dev class = "layer7">
+        <a href="in.html"><img src="img/read_more_label_black.png" width="40%" alt="Read more" vspace="0%" hspace="10%"></a>
+    </dev> -->
+
+    <div class="layer5">
+
+        <div class="container mx-auto mt-3">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                    <img src="/img/IN.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"> </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">IN</h6>
+                            <p class="card-text">He'll just drive you crazy</p>
+                            <a href="/in" class="btn mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="#" class="btn"><i class="fab fa-github"></i> BUY</a>
+                        </div>
+                    </div>
+                </div>    
+
+                <div class="col-md-2 offset-sm-1"></div>
+
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/img/YAN.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"> </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">YAN</h6>
+                            <p class="card-text">So does he</p>
+                            <a href="/yan" class="btn mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="#" class="btn"><i class="fab fa-github"></i> BUY</a>
+                        </div>
+                    </div>
+                </div>    
+
+                <div class="col-md-2 offset-sm-1"></div>    
+
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/img/tiger1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"> </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Information will be added soon</h6>
+                            <p class="card-text">Information will be added soon</p>
+                            <a href="#" class="btn btn-primary mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> BUY</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-2 offset-sm-1"></div>
+
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                    <img src="/img/tiger2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Information will be added soon</h6>
+                            <p class="card-text">Information will be added soon</p>
+                            <a href="#" class="btn mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="#" class="btn"><i class="fab fa-github"></i> BUY</a>
+                        </div>
+                    </div>
+                </div>    
+
+                <div class="col-md-2 offset-sm-1"></div>
+
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/img/tiger3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Information will be added soon</h6>
+                            <p class="card-text">Information will be added soon</p>
+                            <a href="#" class="btn mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="#" class="btn"><i class="fab fa-github"></i> BUY</a>
+                        </div>
+                    </div>
+                </div>   
+                
+                <div class="col-md-2 offset-sm-1"></div>
+                    
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/img/tiger4.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Information will be added soon</h6>
+                            <p class="card-text">Information will be added soon</p>
+                            <a href="#" class="btn btn-primary mr-2"><i class="fas fa-link"></i> READ MORE</a>
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> BUY</a>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
